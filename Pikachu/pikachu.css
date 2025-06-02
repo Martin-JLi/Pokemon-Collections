@@ -1,0 +1,530 @@
+body {
+    margin: 0;
+    align-content: center;
+    justify-items: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    background-color: #a81;
+    overflow: hidden;
+}
+
+:root {
+    --body-color: #f9d125;
+    --body-dark: #d5a41f;
+    --cheek-red: #e13d16;
+    --cheek-border: 0.2cqi solid #c03512;
+    --eye-light: #442418;
+    --tail-btm: #764921;
+    --mouth-light: #b8823a;
+    --mouth-dark: #7a4900;
+    --stroke: #000;
+    --white: #fff;
+    --border: 0.2cqi solid var(--stroke);
+}
+
+@layer base, override;
+
+@layer base {
+    .pikachu {
+        opacity: 1.8;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80vmin;
+        aspect-ratio: 1.45;
+        container-type: inline-size;
+
+        .pikachu-head-shade {
+            position: relative;
+            background-color: var(--body-dark);
+            width: 12cqi;
+            aspect-ratio: 3;
+            left: 8cqi;
+            top: 12cqi;
+            filter: blur(0.5cqi);
+            border-radius: 0% 100% 40% 60% / 0% 0% 100% 100%;
+            z-index: 3;
+        }
+
+        .pikachu-leg-cover {
+            mix-blend-mode: lighten;
+            background-color: var(--body-color);
+            border: var(--border);
+            width: 1.5cqi;
+            aspect-ratio: 0.1;
+            border-radius: 50%;
+            right: -0.8cqi;
+            top: 17.75cqi;
+            rotate: -2deg;
+        }
+
+        .pikachu-leg {
+            background-color: var(--body-color);
+            border: var(--border);
+            width: 20cqi;
+            aspect-ratio: 0.75;
+            border-radius: 50% 50% 50% 50% / 80% 80% 30% 30%;
+            mix-blend-mode: lighten;
+            box-shadow: inset 0cqi -2cqi 3cqi -1cqi var(--body-dark);
+
+            &.left {
+                top: 13cqi;
+                left: -3.5cqi;
+                rotate: 2deg;
+            }
+
+            &.right {
+                top: 15.5cqi;
+                right: -1.5cqi;
+                rotate: 12deg;
+            }
+        }
+
+        .pikachu-body {
+            background-color: var(--body-color);
+            border: var(--border);
+            width: 30cqi;
+            aspect-ratio: 0.9;
+            border-radius: 30% 30% 30% 30% / 80% 80% 80% 80%;
+            rotate: -5deg;
+            top: 20cqi;
+            left: 25.6cqi;
+            z-index: 1;
+        }
+
+        .pikachu-foot {
+            position: relative;
+            background-color: var(--body-dark);
+            border: var(--border);
+            width: 4.5cqi;
+            aspect-ratio: 0.35;
+            border-radius: 70% 70% 50% 50% / 80% 80% 20% 20%;
+            mix-blend-mode: lighten;
+            overflow: hidden;
+
+            &.left {
+                left: -2cqi;
+                top: 34.5cqi;
+                rotate: -111deg;
+            }
+
+            &.right {
+                left: 25cqi;
+                top: 38.4cqi;
+                rotate: 121deg;
+            }
+
+            &::before,
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                border-top: var(--border);
+                width: 2cqi;
+                aspect-ratio: 1;
+                rotate: 90deg;
+                left: -0.4cqi;
+            }
+
+            &::after {
+                left: 0.9cqi;
+            }
+        }
+
+        .pikachu-arm {
+            position: relative;
+            z-index: 2;
+            background-color: var(--body-color);
+            border: var(--border);
+            border-top-color: var(--body-color);
+            width: 6.5cqi;
+            aspect-ratio: 0.6;
+            top: 17.5cqi;
+
+            .pikachu-finger {
+                background-color: var(--body-color);
+                border: var(--border);
+                width: 0.65cqi;
+                aspect-ratio: 0.7;
+                border-radius: 50%;
+                bottom: -0.3cqi;
+
+                &:nth-child(1) {
+                    left: 25%;
+                }
+                &:nth-child(2) {
+                    left: 37%;
+                }
+                &:nth-child(3) {
+                    left: 49%;
+                }
+                &:nth-child(4) {
+                    left: 61%;
+                }
+
+                mix-blend-mode: lighten;
+            }
+
+            &.left {
+                left: 2cqi;
+                rotate: -25deg;
+                box-shadow: var(--body-dark) -1.5cqi 0.25cqi 1cqi -0.5cqi;
+            }
+
+            &.right {
+                right: 4.5cqi;
+                rotate: 25deg;
+                scale: 1.15;
+                box-shadow: var(--body-dark) 1.5cqi 0.25cqi 1cqi -0.5cqi;
+            }
+
+            border-radius: 0% 0% 40% 40% / 0% 0% 100% 100%;
+        }
+
+        .pikachu-tail-inner {
+            position: relative;
+            background-color: var(--body-color);
+            scale: 0.99;
+
+            .tail-shade {
+                background-color: var(--body-dark);
+                width: 30cqi;
+                aspect-ratio: 1;
+                border-radius: 5% 100% 5% 30% / 5% 40% 5% 100%;
+                filter: blur(0.5cqi);
+
+                &:nth-child(1) {
+                    left: 20cqi;
+                    top: 15cqi;
+                }
+
+                &:nth-child(2) {
+                    width: 30cqi;
+                    left: 15cqi;
+                    top: 30cqi;
+                }
+            }
+
+            .tail-btm {
+                position: relative;
+                background-color: var(--tail-btm);
+                width: 20cqi;
+                aspect-ratio: 2;
+                bottom: 4cqi;
+                left: 7cqi;
+                rotate: -15deg;
+
+                &:before,
+                &:after {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    border: 1cqi solid var(--tail-btm);
+                    border-top-color: transparent;
+                    border-bottom-color: transparent;
+                }
+
+                &:before {
+                    left: 11cqi;
+                    top: -1cqi;
+                    rotate: -15deg;
+                }
+                &:after {
+                    left: 13.1cqi;
+                    top: -1cqi;
+                    rotate: 25deg;
+                }
+            }
+        }
+
+        .pikachu-tail {
+            position: relative;
+            background-color: var(--stroke);
+            right: 4.5cqi;
+            top: 13.5cqi;
+            rotate: 15deg;
+        }
+
+        .pikachu-tail,
+        .pikachu-tail-inner {
+            width: 50cqi;
+            aspect-ratio: 1;
+            transform-origin: center center;
+            clip-path: polygon(
+                100% 14%,
+                30% 21%,
+                37% 52%,
+                26% 56%,
+                35% 73%,
+                2% 90%,
+                18% 90%,
+                42% 76%,
+                39% 64%,
+                47% 64%,
+                50% 46%,
+                95% 44%
+            );
+        }
+
+        .pikachu-head {
+            width: 30cqi;
+            aspect-ratio: 1;
+            border-radius: 50% 50% 30% 30% / 40% 60% 32% 30%;
+            left: 23.25cqi;
+            top: 3.75cqi;
+            transform: rotate(-5deg);
+            z-index: 2;
+
+            .pikachu-ear {
+                position: relative;
+                background-color: var(--body-color);
+                border: var(--border);
+                width: 35cqi;
+                aspect-ratio: 3.9;
+                border-radius: 0% 100% 0% 100% / 0% 100% 0% 100%;
+                overflow: hidden;
+                mix-blend-mode: lighten;
+
+                .ear-black {
+                    background-color: var(--stroke);
+                    width: 20cqi;
+                    aspect-ratio: 1;
+                    left: -9cqi;
+                    top: -6cqi;
+                    border-radius: 50%;
+                }
+
+                .ear-shade {
+                    background-color: var(--body-dark);
+                    width: 22cqi;
+                    aspect-ratio: 3;
+                    rotate: -3deg;
+                    bottom: -5cqi;
+                    right: 0cqi;
+                    mix-blend-mode: darken;
+                }
+
+                &.left {
+                    left: -20cqi;
+                    top: -1cqi;
+                }
+
+                &.right {
+                    right: -21cqi;
+                    top: 2cqi;
+                    transform: scaleX(-1) rotate(-20deg);
+                }
+            }
+
+            .pikachu-cheek-red {
+                position: relative;
+                background-color: var(--cheek-red);
+                border-radius: 50%;
+                border: var(--cheek-border);
+
+                &.left {
+                    width: 4.75cqi;
+                    aspect-ratio: 0.85;
+                    top: 17.5cqi;
+                }
+
+                &.right {
+                    width: 5.5cqi;
+                    aspect-ratio: 1;
+                    right: 1.15cqi;
+                    top: 18.5cqi;
+                }
+            }
+
+            .pikachu-cheek {
+                position: relative;
+                background-color: var(--body-color);
+                width: 10cqi;
+                aspect-ratio: 1;
+                border-radius: 50%;
+                border: var(--border);
+                mix-blend-mode: lighten;
+
+                &.left {
+                    left: -1.5cqi;
+                    top: 14cqi;
+                }
+
+                &.right {
+                    right: -1.5cqi;
+                    top: 14cqi;
+                }
+            }
+
+            .pikachu-nose {
+                background-color: var(--stroke);
+                border: var(--border);
+                width: 3cqi;
+                aspect-ratio: 4.2;
+                top: 15.5cqi;
+                left: 12.5cqi;
+                transform: skewX(55deg) rotate(-19deg);
+                border-radius: 35%;
+
+                .pikachu-nose-light {
+                    background-color: var(--white);
+                    width: 2cqi;
+                    aspect-ratio: 4;
+                    transform: skewX(-55deg) rotate(5deg);
+                    border-radius: 50%;
+                    filter: blur(0.05cqi);
+                    top: -10%;
+                    left: 3%;
+                }
+            }
+
+            .pikachu-mouth {
+                background-color: var(--mouth-dark);
+                border: var(--border);
+                border-color: var(--mouth-dark);
+                width: 3cqi;
+                aspect-ratio: 4;
+                border-radius: 52% 47% 12% 17% / 88% 88% 18% 31%;
+                top: 21.5cqi;
+                left: 12cqi;
+                overflow: hidden;
+
+                .pikachu-mouth-inner {
+                    background-color: var(--mouth-light);
+                    width: 2.7cqi;
+                    aspect-ratio: 1;
+                    border-radius: 50%;
+                    top: -1cqi;
+                    left: 0.35cqi;
+                }
+            }
+
+            .pikachu-face {
+                background: radial-gradient(3% 18% at -1% 35%, #000 100%, #0000)
+                        no-repeat,
+                    linear-gradient(
+                        45deg,
+                        var(--body-color) 5%,
+                        var(--body-color) 80%
+                    );
+                mask: radial-gradient(3% 18% at -1% 35%, #0000 100%, #000);
+                width: 30cqi;
+                aspect-ratio: 1;
+                border-radius: 50% 50% 40% 40% / 40% 44% 32% 30%;
+                border: var(--border);
+                border-bottom: none;
+            }
+
+            .pikachu-eye {
+                position: relative;
+                background: linear-gradient(
+                    to bottom,
+                    var(--stroke) 0%,
+                    var(--eye-light) 120%
+                );
+                border: var(--border);
+                width: 5cqi;
+                aspect-ratio: 1.15;
+                border-radius: 77% 23% 50% 50% / 50% 50% 50% 50%;
+
+                .pikachu-eye-light {
+                    background-color: var(--white);
+                    width: 2.1cqi;
+                    aspect-ratio: 1;
+                    right: 0.2cqi;
+                    top: 0cqi;
+                    border-radius: 50%;
+                    filter: blur(0.1cqi);
+                }
+
+                .pikachu-eye-small {
+                    position: relative;
+                    background-color: var(--stroke);
+                    width: 2cqi;
+                    aspect-ratio: 1;
+                    right: 1.7cqi;
+                    top: 1.7cqi;
+                    border-radius: 50%;
+                    filter: blur(0.1cqi);
+
+                    .pikachu-eye-light-smo {
+                        background-color: var(--white);
+                        width: 0.8cqi;
+                        aspect-ratio: 1;
+                        left: 0.2cqi;
+                        top: 0.2cqi;
+                        border-radius: 50%;
+                        filter: blur(0.05cqi);
+                    }
+
+                    .pikachu-eye-light-smt {
+                        background-color: var(--white);
+                        width: 0.4cqi;
+                        aspect-ratio: 1;
+                        left: 0.9cqi;
+                        top: 0.9cqi;
+                        border-radius: 50%;
+                        filter: blur(0.05cqi);
+                    }
+                }
+
+                &.left {
+                    left: 3.5cqi;
+                    top: 10.9cqi;
+                }
+
+                &.right {
+                    right: 4.4cqi;
+                    top: 11.25cqi;
+                    transform: scale(-1.05, 1.1);
+                }
+
+                .eye-tear {
+                    position: relative;
+                    background: #fff;
+                    width: 1.5cqi;
+                    aspect-ratio: 1;
+                    border-radius: 50%;
+                    bottom: -0.8cqi;
+                    left: 0.5cqi;
+                    rotate: 20deg;
+                    box-shadow: inset 0.15cqi 0.15cqi 0.3cqi #00000020,
+                        inset -0.15cqi -0.15cqi 0.3cqi #fff,
+                        0.2cqi 0.6cqi 0.4cqi #00000010;
+                    filter: blur(0.1cqi) opacity(0.6);
+
+                    &:before,
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        width: 1.2cqi;
+                        aspect-ratio: 1;
+                        border-radius: 50%;
+                        background: #fff;
+                        box-shadow: inset 0.15cqi 0.15cqi 0.3cqi #00000020,
+                            inset -0.15cqi -0.15cqi 0.3cqi #fff,
+                            0.2cqi 0.6cqi 0.4cqi #00000010;
+                    }
+
+                    &:before {
+                        right: 80%;
+                    }
+
+                    &:after {
+                        left: 80%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@layer override {
+    .pikachu {
+        * {
+            position: absolute;
+        }
+    }
+}
