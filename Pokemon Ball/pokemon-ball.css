@@ -1,0 +1,125 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #111;
+    align-content: center;
+}
+
+.pokeball-container {
+    width: 300px;
+    aspect-ratio: 1;
+    position: relative;
+    margin-left: 10%;
+    border-radius: 50%;
+    background: #878c8e;
+    background: radial-gradient(circle at bottom, #3a3a3a 20%, #1a1919 50%);
+    animation: pokemonball-drop 5s linear forwards;
+    transform-origin: 50% 70%;
+}
+
+.pokeball-mid {
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    aspect-ratio: 8;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.15s linear;
+    z-index: 2;
+}
+
+.pokeball-dot-black {
+    position: absolute;
+    width: 30%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s linear;
+    z-index: 2;
+}
+
+.pokeball-dot-white {
+    position: absolute;
+    width: 60%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pokeball-dot-small-white {
+    position: absolute;
+    width: 40%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid gray;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pokeball-container:not(:hover) {
+    .pokeball-mid {
+        transition-delay: 0.3s;
+    }
+}
+
+.pokeball {
+    width: 300px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transition: all 0.3s linear;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    &.top {
+        clip-path: path("M 0 151 A 10 0 0 0 1 300 151 A 10 10 0 0 0 0 151 Z");
+        box-shadow: rgba(255, 0, 0, 0.467) 0px 150px 5px -10px inset;
+        background: radial-gradient(
+            170% 120% at center top,
+            rgb(214, 82, 82) 0%,
+            rgb(61, 13, 13) 30%
+        );
+    }
+
+    &.btm {
+        box-shadow: rgba(255, 255, 255, 0.467) 0px -150px 5px -5px inset;
+        clip-path: path("M 0 149 A 10 0 0 0 0 300 149 A 10 10 0 0 1 0 149 Z");
+        background: radial-gradient(
+            170% 120% at center bottom,
+            rgb(87, 87, 87) 0%,
+            rgb(243, 243, 243) 30%
+        );
+    }
+}
+
+.pokeball-container:hover {
+    .pokeball.top {
+        clip-path: path("M 0 151 A 10 8 0 0 1 300 151 A 10 10 0 0 0 0 151 Z");
+        box-shadow: rgb(170, 0, 0) 0px 20px 5px -5px inset;
+        transition-delay: 0.15s;
+    }
+    .pokeball.btm {
+        box-shadow: rgba(255, 255, 255, 0.667) 0px -20px 5px -5px inset;
+        clip-path: path("M 0 149 A 10 8 0 0 0 300 149 A 10 10 0 0 1 0 149 Z");
+        transition-delay: 0.15s;
+    }
+
+    .pokeball-mid {
+        transform: translateY(-50%) scaleX(0);
+        border-radius: 50%;
+    }
+
+    .pokeball-dot-black {
+        transform: translate(-50%, -160px) scaleY(0.45);
+        transition-delay: 0.15s;
+    }
+}
