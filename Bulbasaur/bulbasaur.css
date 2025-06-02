@@ -1,0 +1,660 @@
+
+:root {
+    --body-color-light: #8acbb1;
+    --eye-red: #be404f;
+    --stroke: #000;
+    --white: #fff;
+    --garlic-light: #8dc48f;
+    --garlic-dark: #5b9e6b;
+    --shade-dark: #7eb39b;
+    --shade-light: #b1dbc2;
+    --spot-color: #478d6d;
+}
+
+
+
+
+body {
+    align-content: center;
+    justify-items: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    background-color: #121;
+}
+
+.bulbasaur {
+    position: absolute;
+    width: 63vmin;
+    aspect-ratio: 1.08;
+    top: 23.5vh;
+    left: 20vw;
+    container-type: inline-size;
+    z-index: 1;
+
+    * {
+        position: absolute;
+    }
+}
+
+.bulbasaur-head {
+    width: 61.5cqi;
+    aspect-ratio: 1.5;
+    top: 22%;
+    left: 1.5%;
+    z-index: 2;
+}
+
+.bulbasaur-head-inner {
+    background: var(--body-color-light);
+    border: 0.5cqi solid var(--stroke);
+    width: 61.5cqi;
+    aspect-ratio: 1.5;
+    border-bottom: none;
+    border-right: none;
+    border-radius: 43% 46% 20% 36% / 78% 64% 32% 21%; 
+    z-index: 2;
+
+    * {
+        z-index: 2;
+    }
+
+    &:before, &:after {
+        content: "";
+        background-color: var(--body-color-light);
+        position: absolute;
+    }
+
+    &::before {
+        border-left: 0.5cqi solid var(--stroke);
+        border-bottom: 0.5cqi solid var(--stroke);
+        border-radius: 30% 70% 47% 53% / 12% 14% 86% 88%;
+        width: 58.5cqi;
+        aspect-ratio: 3.6;
+        top: 78%;
+        left: -1.25%;
+        rotate: 4deg;
+    }
+
+    &:after {
+        width: 16cqi;
+        aspect-ratio: 4;
+        border-radius: 100%;
+        top: 72.5%;
+        left: 0.15%;
+        z-index: 0;
+    }
+}
+
+.bulbasaur-head-border-fix {
+    background: var(--body-color-light);
+    width: 3cqi;
+    aspect-ratio: 0.25;
+    rotate: 24deg;
+    top: 72%;
+    left: 92%;
+    border-radius: 100%;
+}
+
+.bulbasaur-body {
+    border: 0.5cqi solid var(--stroke);
+    background: var(--body-color-light);
+    width: 72.5cqi;
+    aspect-ratio: 1.5;
+    top: 37%;
+    left: 21%;
+    rotate: 5deg;
+    border-radius: 31% 69% 18% 80% / 68% 83% 17% 32%;
+    overflow: hidden;
+}
+
+.bulbasaur-ear {
+    border: 0.5cqi solid var(--stroke);
+    background: var(--body-color-light);
+    width: 20cqi;
+    aspect-ratio: 1;
+    border-radius: 2cqi;
+
+    
+    &.right {
+        width: 20cqi;
+        aspect-ratio: 0.65;
+        top: -10%;
+        left: 63%;
+        border-radius: 100% 10% 10% 90% / 53% 55% 46% 48%;
+        transform: skewX(-5deg) rotate(-16deg);
+        clip-path: polygon(10% 0, 100% 0%, 100% 90%);
+        z-index: 10;
+    }
+
+    &.left {
+        top: -5%;
+        left: 12%;
+        transform: skewX(-5deg) rotate(18deg);
+    }
+}
+
+.bulbasaur-eye {
+    border: 0.5cqi solid var(--stroke);
+    background-color: var(--white);
+    width: 16cqi;
+    aspect-ratio: 0.95;
+    border-radius: 59% 41% 39% 61% / 89% 92% 7% 11%;
+    overflow: hidden;
+
+    .bulbasaur-eye-inner {
+        border: 0.5cqi solid var(--stroke);
+        background-color: var(--eye-red);
+        width: 75%;
+        aspect-ratio: 0.73;
+        top: 4%;
+        right: -8%;
+        border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
+        overflow: hidden;
+    
+        .bulbasaur-eye-top {
+            background-color: #fffa;
+            width: 24%;
+            aspect-ratio: 0.475;
+            top: 8%;
+            left: 20%;
+            border-radius: 100%;
+            transform: rotate(15deg);
+            filter: blur(1cqi)
+        }
+        .bulbasaur-eye-mid {
+            background-color: #fff;
+            width: 33%;
+            aspect-ratio: 0.475;
+            top: 20%;
+            left: 30%;
+            border-radius: 100%;
+            transform: rotate(10deg);
+        }
+        .bulbasaur-eye-bottom {
+            background-color: #fff6;
+            width: 120%;
+            aspect-ratio: 1;
+            top: 50%;
+            left: -15%;
+            border-radius: 100%;
+            transform: rotate(10deg);
+            filter: blur(1cqi)
+        }
+    }
+
+    &.right {
+        top: 38%;
+        left: 57%;
+        transform: rotate(-10deg);
+    }
+
+        
+    &.left {
+        left: 4%;
+        top: 36%;
+        width: 6cqi;
+        aspect-ratio: 0.375;
+        transform: rotate(6deg);
+
+        .bulbasaur-eye-inner {
+            left: 40%;
+            aspect-ratio: .1875;
+            border-radius: 50%;
+            aspect-ratio: 0.3;
+        }
+        .bulbasaur-eye-top {
+            top: 30%;
+        }
+        .bulbasaur-eye-mid {
+            width: 50%;
+            aspect-ratio: 0.3;
+            top: 25%;
+            left: 35%;
+            transform: rotate(-6deg);
+        }
+        .bulbasaur-eye-bottom {
+            top: 70%;
+        }
+    }
+}
+
+.bulbasaur-eye-brow {
+    border: 0.5cqi solid transparent;
+    border-right-color: var(--stroke);
+    width: 2cqi;
+    aspect-ratio: 0.25;
+    border-radius: 50%;
+    top: 35%;
+
+    &.left {
+        left: 15%;
+        transform: rotate(-10deg);
+    }
+
+    &.right {
+        left: 55%;
+        transform: scaleX(-1) rotate(-20deg);
+    }
+}
+
+.bulbasaur-nose {
+    background-color: var(--stroke);
+    width: 0.5cqi;
+    aspect-ratio: 0.3;
+    top: 86%;
+
+    &.left {
+        left: 20%;
+        rotate: -25deg;
+    }
+
+    &.right {
+        left: 32%;
+        top: 88%;
+        rotate: 55deg;
+    }
+}
+
+.bulbasaur-mouth {
+    width: 57cqi;
+    aspect-ratio: 2;
+    left: -3%;
+    bottom: -25%;
+
+    .bulbasaur-mouth-top {
+        border: 0.5cqi solid transparent;
+        border-bottom-color: var(--stroke);
+        width: 100%;
+        aspect-ratio: 3.5;
+        border-radius: 100%;
+        top: 0%;
+        transform: rotate(2deg);
+    }
+
+    .bulbasaur-mouth-dot {
+        background-color: var(--stroke);
+        width: 0.5cqi;
+        aspect-ratio: 0.5;
+
+        &.left {
+            top: 39%;
+            left: 6.5%;
+            transform: rotate(-15deg);
+        }
+
+        &.right {
+            top: 44.5%;
+            left: 93.5%;
+            transform: rotate(15deg);
+        }
+    }
+
+    .bulbasaur-mouth-inner {
+        background-color: #9c879a;
+        width: 65%;
+        aspect-ratio: 1;
+        bottom: 14%;
+        left: 17%;
+        border-radius: 10cqi;
+        transform: rotate(-33deg) skewX(25deg);
+        clip-path: polygon(0 100%, 0 40%, 60% 100%);
+        z-index: -1;
+        border: 0.5cqi solid var(--stroke);
+        overflow: hidden;
+
+        .bulbasaur-tougue {
+            background-color: #9c7693;
+            border: 0.5cqi solid black;
+            width: 100%;
+            top: 80%;
+            left: -15%;
+            aspect-ratio: 3;
+            border-radius: 100%;
+            transform: rotate(45deg) skewX(-25deg);
+        }
+
+        .bulbasaur-tougue-shade {
+            background-color: #c89bb7;
+            width: 100%;
+            top: 80%;
+            left: -40%;
+            aspect-ratio: 3;
+            border-radius: 100%;
+            transform: rotate(45deg) skewX(-25deg);
+        }
+    }
+    .bulbasaur-teeth {
+        background-color: var(--white);
+        border: 0.5cqi solid var(--stroke);
+        top: 47%;
+        width: 3%;
+        aspect-ratio: 1;
+        border-radius: 0 0 30% 0;
+        z-index: -1;
+
+        &.left {
+            left: 18%;
+            transform: rotate(25deg) skewY(45deg);
+        }
+
+        &.right {
+            left: 79%;
+            top: 50%;
+            transform: rotate(-20deg) skewY(-45deg);
+        }
+    }
+
+    .bulbasaur-mouth-cover {
+        background-color: var(--body-color-light);
+        border: 0.5cqi solid transparent;
+        width: 100%;
+        top: 0%;
+        aspect-ratio: 3.5;
+        border-radius: 100%;
+        transform: rotate(2deg);
+        clip-path: polygon(20% 60%, 80% 60%, 100% 100%, 0 100%);
+        z-index: -1;
+    }
+}
+
+.bulbasaur-garlic {
+    background-image: linear-gradient(to right, var(--garlic-light), var(--garlic-dark) 40%,
+                                                var(--garlic-dark)60%, var(--garlic-light) 100%);
+    border: 0.5cqi solid #000;
+    width: 67%;
+    aspect-ratio: 1.5;
+    border-radius: 100%;
+    left: 33%;
+    top: 12%;
+    transform: rotate(30deg);
+    border-top: none;
+}
+
+.bulbasaur-garlic-top {
+    background-color: var(--garlic-dark);
+    border-top: 0.5cqi solid black;
+    width: 30%;
+    aspect-ratio: 0.84;
+    top: -30%;
+    mix-blend-mode: lighten;
+
+    &.left {
+        mask: radial-gradient(65% 60% at left,#0000 100%,#000);
+        right: 52%;
+        transform: rotate(45deg);
+    }
+
+    &.right {
+        mask: radial-gradient(65% 60% at right,#0000 100%,#000);
+        left: 52%;
+        transform: rotate(-45deg);
+    }
+
+    &.mid {
+        border-left: 0.5cqi solid black;
+        border-bottom: 2cqi solid black;
+        border-right: 2cqi solid black;
+        width: 5%;
+        aspect-ratio: 1;
+        transform: rotate(45deg);
+        left: 45.7%;
+        top: -25.5%;
+        z-index: -1;
+    }
+}
+
+.bulbasaur-garlic-stroke {
+    border: 0.5cqi solid transparent;
+    width: 18%;
+    aspect-ratio: 0.7;
+    top: -36%;
+    border-radius: 100%;
+
+    &.left {
+        border-right-color: black;
+        right: 57%;
+        transform: rotate(20deg);
+    }
+
+    &.right {
+        border-left-color: black;
+        left: 57%;
+        transform: rotate(-20deg);
+    }
+}
+
+.bulbasaur-garlic-piece {
+    border: 0.5cqi solid transparent;
+    width: 70%;
+    aspect-ratio: 1.2;
+    top: -13%;
+
+    &.left {
+        border-left-color: black;
+        border-radius: 100% 0 0 100%;
+        left: 26%;
+    }
+
+    &.right {
+        border-radius: 0 100% 100% 0;
+        border-right-color: var(--stroke);
+        right: 26%;
+    }
+}
+
+.bulbasaur-toe {
+    background: var(--white);
+    border: 0.5cqi solid var(--stroke);
+    width: 7%;
+    aspect-ratio: 1;
+    border-radius: 0.2cqi;
+    transform: rotate(70deg) skewX(22deg);
+
+    &.left {
+        bottom: -5%;
+        left: 30%;
+    }
+
+    &.mid {
+        bottom: -6.5%;
+        left: 48%;
+        width: 9.5%;
+    }
+
+    &.right {
+        bottom: -5%;
+        left: 69%;
+    }
+}
+
+
+.bulbasaur-arm {
+    background-color: var(--body-color-light);
+    border: 0.5cqi solid var(--stroke);
+    width: 20%;
+    aspect-ratio: 0.75;
+    border-radius: 22% 30% 29% 38% / 43% 45% 73% 75%;
+    border-top: none;
+    top: 70%;
+    overflow: hidden;
+     
+    &.right {
+        left: 47%;
+        transform: rotate(25deg);
+    }
+
+    &.left {
+        top: 65%;
+        left: 14%;
+        z-index: -1;
+        transform: rotate(5deg);
+    }
+}
+
+.bulbasaur-leg {
+    background-color: var(--body-color-light);
+    border: 0.5cqi solid var(--stroke);
+    width: 23%;
+    aspect-ratio: 0.9;
+    border-radius: 37% 29% 14% 31% / 52% 36% 66% 52%;
+    border-top: none;
+    top: 70%;
+    overflow: hidden;
+
+    .bulbasaur-toe {
+        transform: rotate(55deg) skewX(22deg);
+    }
+
+    &.right {
+        left: 70%;
+    }
+
+    &.left {
+        top: 65%;
+        left: 40%;
+        z-index: -1;
+        transform: rotate(25deg);
+    }
+}
+
+
+.bulbasaur-spot {
+    background: var(--spot-color);
+    border: 0.5cqi solid var(--stroke);
+
+    &.face.big {
+        width: 12%;
+        aspect-ratio: 0.5;
+        left: 40%;
+        border-radius: 48% 55% 48% 52% / 92% 90% 8% 7% ;
+        transform: rotate(65deg);
+    }
+
+    &.face.mid {
+        width: 12%;
+        aspect-ratio: 1.5;
+        left: 32%;
+        top: 47%;
+        border-radius: 48% 55% 48% 52% / 92% 90% 8% 7% ;
+        transform: rotate(-85deg);
+    }
+
+    &.face.small {
+        width: 4%;
+        aspect-ratio: 1;
+        left: 24%;
+        top: 35%;
+        border-radius: 20%;
+        transform: rotate(75deg) skewX(22deg);
+    }
+
+    &.left-arm {
+        width: 45%;
+        aspect-ratio: 1;
+        left: -5%;
+        top: 45%;
+        border-radius: 20%;
+        transform: rotate(108deg) skewX(12deg);
+    }
+
+    &.right-arm.small {
+        width: 15%;
+        aspect-ratio: 1;
+        border-radius: 46% 82% 48% 53% / 53% 43% 55% 53% ;
+        left: 35%;
+        top: 15%;
+    }
+
+    &.right-arm.big {
+        width: 45%;
+        aspect-ratio: 0.75;
+        border-radius: 46% 82% 48% 53% / 53% 43% 55% 53% ;
+        left: -5%;
+        top: 45%;
+    }
+
+    &.right-leg {
+        width: 40%;
+        aspect-ratio: 0.75;
+        border-radius: 90% 5% 48% 53% / 71% 54% 47% 31%;
+        left: 18%;
+    }
+
+    &.body {
+        width: 25%;
+        aspect-ratio: 1.5;
+        left: 60%;
+        top: 10%;
+        border-radius: 20%;
+        transform: rotate(50deg);
+    }
+}
+
+.bulbasaur-garlic-shade {
+    background-color: #fff7;
+    width: 45%;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    top: 8%;
+    left: 8%;
+}
+
+.bulbasaur-shade {
+    background-color: var(--shade-light);
+    z-index: 10;
+    border-radius: 100%;
+
+    &.dark {
+        background-color: var(--shade-dark);
+    }
+
+    &.face {
+        width: 30%;
+        aspect-ratio: 2;
+        left: 9%;
+        top: 25%;
+        transform: rotate(-20deg);
+
+        &.dark {
+            left: 40%;
+            top: 45%;
+            width: 35%;
+            aspect-ratio: 7;
+            transform: rotate(90deg);
+        }
+    }
+
+    &.face-lower {
+        width: 20%;
+        aspect-ratio: 2;
+        left: 15%;
+        top: 40%;
+    }
+
+    &.body {
+        width: 50%;
+        aspect-ratio: 3;
+        left: 45%;
+        top: 18%;
+        transform: rotate(35deg);
+    }
+
+    &.arm {
+        width: 60%;
+        aspect-ratio: 0.5;
+        top: 5%;
+    }
+
+    &.leg {
+        width: 40%;
+        aspect-ratio: 0.5;
+        top: 5%;
+    }
+}
+
+.shade {
+    opacity: 0.5;
+    filter: blur(2cqi);
+}
+          
